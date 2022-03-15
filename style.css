@@ -1,0 +1,17 @@
+h1, p {
+    text-align: center;
+}
+
+main canvas {
+    margin: auto;
+    display: block;
+}
+
+.imgHolder, .imgHolder img {
+    display: block;
+}
+
+.imgHolder p{
+ text-align: left;
+ display: block;
+}
