@@ -28,7 +28,7 @@ function gotDetections(error, results) {
 
 //Create canvas for video
 function setup() {
-  createCanvas(720, 1280);
+  createCanvas(1280, 720);
   imgDiv = document.createElement("div");
   imgDiv.classList.add("container");
   document.body.appendChild(imgDiv);
@@ -63,10 +63,9 @@ function draw() {
 }
 
 function saveImage() {
-  if(cooldown == false) {
+  if(cooldown === false) {
     cooldown = true;
-    cooldownDiv
-    .innerHTML = "Cooldown is: " + cooldown;
+    cooldownDiv.innerHTML = "Cooldown is: " + cooldown;
     let imgHolder = document.createElement('div');
     imgHolder.classList.add("imgHolder");
     let img = document.createElement("img");
