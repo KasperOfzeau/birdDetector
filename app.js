@@ -35,7 +35,7 @@ function setup() {
   cooldown = false;
   cooldownDiv.innerHTML = "Cooldown is: " + cooldown;
   video = createCapture(options);
-  video.size(720, 1280);
+  video.size(AUTO, AUTO);
   video.hide();
   detector.detect(video, gotDetections);
 }
@@ -58,7 +58,6 @@ function draw() {
         text(object.label, object.x + 10, object.y + 24);
 
         saveImage(); // Save image of bird
-        downloadImage(); // download image of bird
     }
   }
 }
@@ -79,6 +78,8 @@ function saveImage() {
     imgHolder.appendChild(img);
     imgHolder.appendChild(tag);
     imgDiv.appendChild(imgHolder);
+
+    downloadImage(); // download image of bird
 
     // Start cooldown
     setTimeout(function(){
