@@ -28,14 +28,14 @@ function gotDetections(error, results) {
 
 //Create canvas for video
 function setup() {
-  createCanvas(1280, 720);
+  createCanvas(720, 1280);
   imgDiv = document.createElement("div");
   imgDiv.classList.add("container");
   document.body.appendChild(imgDiv);
   cooldown = false;
   cooldownDiv.innerHTML = "Cooldown is: " + cooldown;
-  video = createCapture(options);
-  video.size(1280, 720);
+  video = createCapture(VIDEO);
+  video.size(720, 1280);
   video.hide();
   detector.detect(video, gotDetections);
 }
@@ -92,6 +92,6 @@ function downloadImage(){
   let link = document.createElement('a');
   let date = new Date().toLocaleString();
   link.download = 'capturedBrid' + date + '.png';
-  link.href = document.getElementById('canvas').toDataURL()
+  link.href = canvas.toDataURL('png');
   link.click();
 }
