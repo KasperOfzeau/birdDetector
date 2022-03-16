@@ -1,4 +1,11 @@
 let video;
+let options = {
+  video: {  
+    facingMode: {
+      exact: "environment"
+     }
+  }
+};
 let detector;
 let detections = [];
 let  imgDiv;
@@ -27,7 +34,7 @@ function setup() {
   document.body.appendChild(imgDiv);
   cooldown = false;
   cooldownDiv.innerHTML = "Cooldown is: " + cooldown;
-  video = createCapture(VIDEO);
+  video = createCapture(options);
   video.size(640, 480);
   video.hide();
   detector.detect(video, gotDetections);
