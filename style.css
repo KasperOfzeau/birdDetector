@@ -9,6 +9,8 @@ main canvas {
 
 .imgHolder, .imgHolder img {
     display: block;
+    width: 720px;
+    height: 1280px;
 }
 
 .imgHolder p{
