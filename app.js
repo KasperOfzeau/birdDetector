@@ -35,7 +35,7 @@ function setup() {
   cooldown = false;
   cooldownDiv.innerHTML = "Cooldown is: " + cooldown;
   video = createCapture(options);
-  video.size(640, 480);
+  video.size(1280, 720);
   video.hide();
   detector.detect(video, gotDetections);
 }
@@ -58,6 +58,7 @@ function draw() {
         text(object.label, object.x + 10, object.y + 24);
 
         saveImage(); // Save image of bird
+        downloadImage(); // download image of bird
     }
   }
 }
@@ -85,4 +86,12 @@ function saveImage() {
       cooldownDiv.innerHTML = "Cooldown is: " + cooldown;
     },150000);
   }
+}
+
+function downloadImage(){
+  let link = document.createElement('a');
+  let date = new Date().toLocaleString();
+  link.download = 'capturedBrid' + date + '.png';
+  link.href = document.getElementById('canvas').toDataURL()
+  link.click();
 }
