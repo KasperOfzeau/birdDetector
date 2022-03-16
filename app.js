@@ -28,7 +28,7 @@ function gotDetections(error, results) {
 
 //Create canvas for video
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(1280, 720);
   imgDiv = document.createElement("div");
   imgDiv.classList.add("container");
   document.body.appendChild(imgDiv);
