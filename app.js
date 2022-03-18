@@ -28,21 +28,24 @@ function gotDetections(error, results) {
 
 //Create canvas for video
 function setup() {
-  createCanvas(1280, 720);
+  createCanvas(640, 240);
   imgDiv = document.createElement("div");
   imgDiv.classList.add("container");
   document.body.appendChild(imgDiv);
   cooldown = false;
   cooldownDiv.innerHTML = "Cooldown is: " + cooldown;
   video = createCapture(options);
-  video.size(AUTO, AUTO);
+  video.size(320, 240);
   video.hide();
   detector.detect(video, gotDetections);
 }
 
 // Draw boxes around detected objects
 function draw() {
-  image(video, 0, 0);
+  image(video, 0, 0, width/2, height); //video on canvas, position, dimensions
+  translate(width,0); // move to far corner
+  scale(-1.0,1.0);    // flip x-axis backwards
+  image(video, 0, 0, width/2, height); //video on canvas, position, dimensions
 
   for (let i = 0; i < detections.length; i++) {
     let object = detections[i];
