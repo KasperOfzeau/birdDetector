@@ -34,7 +34,7 @@ function setup() {
   document.body.appendChild(imgDiv);
   cooldown = false;
   cooldownDiv.innerHTML = "Cooldown is: " + cooldown;
-  video = createCapture(VIDEO);
+  video = createCapture(options);
   video.size(640, 720);
   video.hide();
   detector.detect(video, gotDetections);
